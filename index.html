@@ -7,20 +7,27 @@
 
     <!--HOJA DE ESTILOS-->
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+
+    <section id="loader">
+        <div class="loader"></div>
+        <div class="loader"></div>
+    </section>
+
     <header id="header">
-        <!-- LOGO -->
         <div id="logo">
             <img src="assets/images/Kaneki.png" class="app-logo" alt="Logotipo" />
         </div>
 
-        <!-- MENU -->
         <nav id="menu">
             <ul>
                 <li>
@@ -43,56 +50,48 @@
     </header>
 
     <div id="slider" class="slider-big">
-        <h1>Bienvenido a la instructoria de Ingenieria de Software</h1>
+        <h1 class="animate__animated animate__pulse animate__infinite">Bienvenido a la instructoria de Ingenieria de Software</h1>
     </div>
 
-    <div class="center">
-        <section id="content">
-            <h2 class="subheader">Animes mas vistos</h2>
+    <section id="content">
+        <h2 class="subheader">Animes mas vistos</h2>
 
-            <script type="text/javascript">
-                window.addEventListener("load", function () {
-                    var template = document.getElementById("article-template");
-                    var articles = document.getElementById("articles");
+        <script type="text/javascript">
+            window.addEventListener("load", function () {
+                var template = document.getElementById("article-template");
+                var articles = document.getElementById("articles");
 
-                    for (var i = 1; i <= 5; i++) {
-                        var clonado = template.cloneNode(true);
-                        clonado.removeAttribute("id");
+                for (var i = 1; i <= 5; i++) {
+                    var clonado = template.cloneNode(true);
+                    clonado.removeAttribute("id");
 
-                        var h2 = clonado.getElementsByTagName("h2")[0];
-                        h2.innerHTML = h2.textContent + ' ' + i;
+                    var h2 = clonado.getElementsByTagName("h2")[0];
+                    h2.innerHTML = h2.textContent + ' ' + i;
 
-                        articles.appendChild(clonado);
-                    }
+                    articles.appendChild(clonado);
+                }
 
-                });
-            </script>
+            });
+        </script>
 
-            <!--Listado articulos-->
-            <div id="articles">
-                <article class="article-item" id="article-template">
-                    <div class="image-wrap">
-                        <img src="./assets/images/Poster-tokyoGhoul.jpg"
-                            alt="Paisaje" />
-                    </div>
+        <!-- Listado articulos -->
+        <div id="articles">
+            <article class="article-item" id="article-template">
+                <div class="image-wrap">
+                    <img src="./assets/images/Poster-tokyoGhoul.jpg" alt="Paisaje" />
+                </div>
 
-                    <h2>Anime de prueba</h2>
-                    <span class="date">
-                        Hace 5 minutos
-                    </span>
-                    <a href="#">Leer más</a>
+                <h2>Anime de prueba</h2>
+                <span class="date">
+                    Hace 5 minutos
+                </span>
+                <a href="#">Leer más</a>
 
-                    <div class="clearfix"></div>
-                </article>
+                <div class="clearfix"></div>
+            </article>
+        </div>
 
-                <!--AÑADIR ARTICULOS VIA JS-->
-
-            </div>
-
-        </section>
-
-        <div class="clearfix"></div>
-    </div>
+    </section>
 
     <footer id="footer">
         <div class="center">
@@ -101,6 +100,12 @@
             </p>
         </div>
     </footer>
+    <script>
+        setTimeout(() => {
+            document.querySelector('body').style.overflow = 'auto'
+            document.getElementById('loader').style.display = 'none'
+        }, 7000)
+    </script>
 </body>
 
 </html>
