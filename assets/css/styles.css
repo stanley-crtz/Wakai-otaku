@@ -1,8 +1,16 @@
+:root {
+    --theme: #181818;
+    --secondary-color: #9b0006;
+    --text-white: #fff;
+    --text-black: #000;
+    --text-color-secundary: #e4030b;
+}
+
 body {
     text-align: center;
     margin: 0px;
     padding: 0px;
-
+    background: var(--theme);
     /*FUENTES*/
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -11,114 +19,98 @@ body {
 }
 
 #header {
-    height: 120px;
+    height: max-content;
     width: 100%;
-    background: white;
-    border-bottom: 1px solid #ccc;
-    border-top: 5px solid #61dafb;
+    display: flex;
+    border-bottom: 1px solid var(--secondary-color);
+    border-top: 5px solid var(--secondary-color);
 }
 
-.center{
+.center {
     width: 75%;
     margin: 0px auto;
 }
 
-.clearfix{
-    clear:both;
-    float:none;
+.clearfix {
+    clear: both;
+    float: none;
 }
 
 #logo {
-    width: 30%;
+    flex: 1;
     font-size: 30px;
-    float: left;
-    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    margin-left: 13%;
 }
 
 #logo img {
-    display: block;
-    float: left;
-    height: 60px;
-    margin-top: -9px;
-    margin-right: -10px;
-    animation: girar infinite 30s linear;
-}
-
-@keyframes girar {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    width: 100px;
 }
 
 #brand {
+    color: var(--text-white);
     display: block;
     margin: 0px;
     float: left;
 }
 
-#menu{
-    width: 70%;
-    float:right;
+#menu {
+    flex: 1;
     font-size: 18px;
 }
 
-#menu ul{
+#menu ul {
     line-height: 85px;
-    width: 60%;
-    float:right;
 }
 
-#menu ul li{
+#menu ul li {
     display: inline-block;
     list-style: none;
     height: 46px;
     margin-left: 15px;
     margin-right: 15px;
+    font-family: 'Roboto', sans-serif;
 }
 
-#menu a{
+#menu a {
     text-decoration: none;
-    color: #444;
+    color: var(--text-white);
     transition: 300ms all;
 }
 
-
-#menu a:hover{
-    color: #3cb2d3;
+#menu a:hover {
+    color: var(--text-color-secundary);
 }
 
-#slider{
+#slider {
     width: 100%;
     height: 350px;
     /*line-height: 320px;*/
     color: white;
     text-shadow: 0px 0px 5px #444;
-
     /*DEGRADADO CSS*/
-    background: rgba(73,155,234,1);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(81,175,247,1) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(81,175,247,1)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(81,175,247,1) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(81,175,247,1) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(81,175,247,1) 100%);
-    background: radial-gradient(ellipse at center, rgba(73,155,234,1) 0%, rgba(81,175,247,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#51aff7', GradientType=1 );
+    background-image: url('../images/Banner.png'); 
+    background-size: cover;
+    /* background: #e52d27; */
+    /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #b31217, #e52d27); */
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #b31217, #e52d27); */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#slider h1{
+#slider h1 {
     margin-top: 0.2px;
     padding: 0px;
     padding-top: 130px;
     text-align: center;
 }
 
-.btn-white{
+.btn-white {
     display: block;
     background: white;
-    color:rgb(88, 88, 88);
+    color: rgb(88, 88, 88);
     padding: 10px;
     width: 100px;
     height: 35px;
@@ -134,92 +126,91 @@ body {
     transition: 300ms all;
 }
 
-.btn-white:hover{
+.btn-white:hover {
     background: #444;
-    color:white;
+    color: white;
 }
 
-#slider.slider-small{
+#slider.slider-small {
     height: 150px;
 }
 
-#slider.slider-small h1{
+#slider.slider-small h1 {
     margin-top: 0.2px;
     padding: 0px;
     padding-top: 53px;
 }
 
-#content{
+#content {
     width: 100%;
-    float:left;
+    float: left;
     min-height: 650px;
     margin-right: 20px;
 }
 
-#sidebar{
+#sidebar {
     width: 25%;
-    float:left;
+    float: left;
 }
 
-.sidebar-item{
+.sidebar-item {
     background: #f7f7f7;
     padding: 20px;
     margin-top: 30px;
 }
 
-.sidebar-item h3{
+.sidebar-item h3 {
     text-transform: uppercase;
     font-size: 18px;
-    margin:0px;
+    margin: 0px;
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 3px solid #eee;
 }
 
-.sidebar-item .btn{
+.sidebar-item .btn {
     margin: 0px auto;
     margin-top: 10px;
 }
 
-.btn{
-   display: block;
-   background: black;
-   color: white;
-   padding: 15px; 
-   font-weight: bold;
-   text-transform: uppercase;
-   font-size: 14px;
-   text-decoration: none;
-   max-width: 120px;
-   transition: 300ms all;
-   border: none;
-   cursor:pointer;
+.btn {
+    display: block;
+    background: black;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: none;
+    max-width: 120px;
+    transition: 300ms all;
+    border: none;
+    cursor: pointer;
 }
 
-.btn-success{
+.btn-success {
     background: rgb(23, 150, 19);
 }
 
-.btn-success:hover{
-    background:black;
+.btn-success:hover {
+    background: black;
 }
 
-.mid-form{
+.mid-form {
     width: 50%;
     margin: 0px auto;
 }
 
-.mid-form label{
+.mid-form label {
     display: block;
-    float:left;
+    float: left;
     text-align: left;
     margin-top: 10px;
     margin-bottom: 5px;
     font-size: 17px;
 }
 
-input[type="text"],
-textarea{
+input[type="text"], textarea {
     width: 100%;
     min-height: 30px;
     border: 1px solid #ccc;
@@ -228,12 +219,11 @@ textarea{
     transition: 300ms all;
 }
 
-input[type="text"]:focus,
-textarea:focus{
+input[type="text"]:focus, textarea:focus {
     box-shadow: 0px 0px 5px #eee inset;
 }
 
-textarea{
+textarea {
     width: 100%;
     height: 150px;
     min-width: 100%;
@@ -242,15 +232,13 @@ textarea{
     max-height: 300px;
 }
 
-.radibuttons{
+.radibuttons {
     margin-top: 10px;
     margin-bottom: 10px;
-    float:left;
+    float: left;
 }
 
-
-#footer{
-    background: #f7f7f7;
+#footer {
     width: 100%;
     height: 70px;
     line-height: 70px;
@@ -262,171 +250,173 @@ textarea{
     padding: 0px;
 }
 
-.article-item{
+.article-item {
     width: 100%;
     border-bottom: 1px solid #eee;
     padding-bottom: 20px;
     padding-top: 20px;
     text-align: left;
+
 }
 
 .article-item .image-wrap {
-    width: 130px;
+    max-width: 130px;
     height: 130px;
-    overflow:hidden;
-    float:left;
+    overflow: hidden;
+    float: left;
     margin-right: 15px;
     border: 1px solid #ccc;
+    margin-left: 15px;
 }
 
-.article-item .image-wrap img{
+.article-item .image-wrap img {
     height: 100%;
     text-align: center;
+    
 }
 
-.article-item h2{
+.article-item h2 {
+    color: var(--text-white);
     display: block;
-    width:100%;
+    width: 100%;
     padding: 0px;
     margin: 0px;
     margin-bottom: 7px;
 }
 
-.article-item .date{
+.article-item .date {
     display: block;
     width: 100%;
     color: rgb(122, 122, 122);
 }
 
-.article-item a{
+.article-item a {
     display: block;
     color: #444;
     text-decoration: none;
     margin-top: 10px;
 }
 
-.article-item a:hover{
+.article-item a:hover {
     text-decoration: underline;
 }
 
-.subheader{
+.subheader {
+    color: var(--text-white);
     font-size: 38px;
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
 }
 
-.article-detail .image-wrap{
-    float:none;
-    width:100%;
+.article-detail .image-wrap {
+    float: none;
+    width: 100%;
     height: 300px;
 }
 
-.article-detail .image-wrap img{
+.article-detail .image-wrap img {
     width: 100%;
     height: auto;
 }
 
-.article-detail .subheader{
+.article-detail .subheader {
     margin-top: 15px;
     margin-bottom: 0px;
-    border:none;
+    border: none;
 }
 
 /*RESPONSIVE*/
 
 /*Desde la anchura 963px hasta la anchura 1488px de pantalla*/
-@media (max-width: 1488px){
+
+@media (max-width: 1488px) {
     /*Se ejecutarán estos estilos*/
-    .center{
+    .center {
         width: 85%;
     }
 }
 
 /*Desde la anchura 0px hasta la anchura 963px de pantalla*/
-@media (max-width: 1314px){
-    .center{
+
+@media (max-width: 1314px) {
+    #logo {
+        float: none;
+        width: 240px;
+        margin: 0px auto;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    #header {
+        flex-direction: column;
+    }
+    .center {
         width: 95%;
     }
-
-    #menu ul{
+    #menu ul {
         width: auto;
     }
 }
 
-@media (max-width: 797px){
-    #logo{
-        float:none;
+@media (max-width: 797px) {
+    #logo {
+        float: none;
         width: 240px;
         margin: 0px auto;
         margin-top: 20px;
     }
-
-    #menu,
-    #menu ul{
-       clear:both;
-       float:none;
-       width: 100%;
-       margin: 0px;
-       padding: 0px;
-       line-height: 43px;
+    #menu, #menu ul {
+        clear: both;
+        float: none;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        line-height: 43px;
     }
-
-    #content{
-        float:none;
+    #content {
+        float: none;
         width: 100%;
     }
-
-    #sidebar{
-        float:none;
+    #sidebar {
+        float: none;
         width: 60%;
         margin: 0px auto;
         margin-bottom: 50px;
     }
-
-    #slider h1{
+    #slider h1 {
         padding-top: 115px;
         font-size: 25px;
     }
-
-    .mid-form{
+    .mid-form {
         width: 70%;
     }
 }
 
-@media (max-width: 497px){
-    #header{
+@media (max-width: 497px) {
+    #header {
         min-height: 130px;
-        overflow:hidden;
+        overflow: hidden;
     }
-
-    #menu,
-    #menu ul{
+    #menu, #menu ul {
         line-height: 50px;
     }
-
-    #menu ul li{
+    #menu ul li {
         margin-left: 7px;
         margin-right: 7px;
     }
-
-    #slider{
+    #slider {
         height: 180px;
     }
-
-    #slider h1{
+    #slider h1 {
         font-size: 19px;
         padding-top: 30px;
     }
-
-    #slider .btn-white{
+    #slider .btn-white {
         margin-top: 20px;
     }
-
-    #slider.slider-small{
+    #slider.slider-small {
         height: 100px;
     }
-
-    #slider.slider-small h1{
-       padding-top: 35px;
+    #slider.slider-small h1 {
+        padding-top: 35px;
     }
 }
