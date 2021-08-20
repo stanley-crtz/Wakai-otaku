@@ -14,19 +14,19 @@ export const Header = () => {
             <nav id="menu">
                 <ul>
                     <li>
-                        <NavLink to="Inicio">Emision</NavLink>
+                        <NavLink to="Inicio" activeClassName="activeLink">Emision</NavLink>
                     </li>
                     <li>
-                        <NavLink to="blog.html">Animes</NavLink>
+                        <NavLink to="Animes" activeClassName="activeLink">Animes</NavLink>
                     </li>
                     <li>
-                        <NavLink to="formulario.html">Peliculas</NavLink>
+                        <NavLink to="Peliculas" activeClassName="activeLink">Peliculas</NavLink>
                     </li>
                     <li>
-                        <NavLink to="Estrenos">Estrenos</NavLink>
+                        <NavLink to="Estrenos" activeClassName="activeLink">Estrenos</NavLink>
                     </li>
                     <li>
-                        <NavLink to="#">Peticiones</NavLink>
+                        <NavLink to="Peticiones" activeClassName="activeLink">Peticiones</NavLink>
                     </li>
                 </ul>
             </nav>
