@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Kaneki from '../../Assets/images/Kaneki.png'
 
 
@@ -13,19 +14,19 @@ export const Header = () => {
             <nav id="menu">
                 <ul>
                     <li>
-                        <a href="Inicio">Emision</a>
+                        <NavLink to="Inicio">Emision</NavLink>
                     </li>
                     <li>
-                        <a href="blog.html">Animes</a>
+                        <NavLink to="blog.html">Animes</NavLink>
                     </li>
                     <li>
-                        <a href="formulario.html">Peliculas</a>
+                        <NavLink to="formulario.html">Peliculas</NavLink>
                     </li>
                     <li>
-                        <a href="Estrenos">Estrenos</a>
+                        <NavLink to="Estrenos">Estrenos</NavLink>
                     </li>
                     <li>
-                        <a href="#">Peticiones</a>
+                        <NavLink to="#">Peticiones</NavLink>
                     </li>
                 </ul>
             </nav>
