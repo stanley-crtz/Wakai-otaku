@@ -14,7 +14,7 @@ export const Header = () => {
             <nav id="menu">
                 <ul>
                     <li>
-                        <NavLink to="Inicio" activeClassName="activeLink">Emision</NavLink>
+                        <NavLink to="Inicio" activeClassName="activeLink">Inicio</NavLink>
                     </li>
                     <li>
                         <NavLink to="Animes" activeClassName="activeLink">Animes</NavLink>

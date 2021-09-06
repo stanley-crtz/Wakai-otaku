@@ -1,18 +1,18 @@
 import React from 'react';
 import Poster from '../../../Assets/images/Poster-tokyoGhoul.jpg'
 
-export const Miniaturas = () => {
-
+export const Miniaturas = ({dataAnime}) => {
+    
     return (
 
         <article className="article-item" >
             <div className="image-wrap">
-                <img src={Poster} alt="Paisaje" />
+                <img src={dataAnime.attributes.posterImage.medium} alt="Paisaje" />
             </div>
 
-            <h2>Anime de prueba</h2>
+            <h2>{dataAnime.attributes.canonicalTitle}</h2>
             <span className="date">
-                Hace 5 minutos
+                Rating: {dataAnime.attributes.averageRating}%
             </span>
             <a href="#">Leer más</a>
 
