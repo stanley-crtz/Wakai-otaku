@@ -12,7 +12,7 @@ export const Miniaturas = ({dataAnime}) => {
 
             <h2>{dataAnime.attributes.canonicalTitle}</h2>
             <span className="date">
-                Rating: {dataAnime.attributes.averageRating}%
+                {dataAnime.attributes.episodeCount} - Episodios
             </span>
             <a href="#">Leer más</a>
 
