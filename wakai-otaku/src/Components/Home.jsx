@@ -7,7 +7,7 @@ export const Home = () => {
     return (
         <>
             
-            <Slider></Slider>
+            <Slider title="Bienvenido a la instructoria de Ingenieria de Software"></Slider>
             <MasVistos></MasVistos>
         </>
     )

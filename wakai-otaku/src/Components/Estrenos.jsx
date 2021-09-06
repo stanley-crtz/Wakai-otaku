@@ -6,7 +6,7 @@ export const Estrenos = () => {
 
     return (
         <>
-
+            
             <section id="content">
                 <h2 className="subheader">Estrenos mas recientes</h2>
 
