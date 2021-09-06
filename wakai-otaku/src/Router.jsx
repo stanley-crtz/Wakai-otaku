@@ -6,6 +6,7 @@ import { Footer } from './Components/Footer/Footer';
 import { Estrenos } from './Components/Estrenos';
 import { PaginaNoEncontrada } from './Components/PaginaNoEncontrada';
 import { Pelicula } from './Components/Peliculas';
+import { Animes } from './Components/Animes/Animes';
 
 export const Router = () => {
 
@@ -26,6 +27,7 @@ export const Router = () => {
             <Switch>
                 <Route exact path="/" component={Home}></Route>
                 <Route exact path="/Inicio" component={Home}></Route>
+                <Route exact path="/Animes" component={Animes}></Route>
                 <Route exact path="/Estrenos" component={Estrenos}></Route>
                 <Route exact path="/Peliculas" component={Pelicula}></Route>
                 <Route exact path="*" component={PaginaNoEncontrada}></Route>
