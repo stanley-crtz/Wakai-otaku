@@ -14,9 +14,9 @@ export const Miniaturas = ({dataAnime}) => {
             <span className="date">
                 {dataAnime.attributes.episodeCount} - Episodios
             </span>
-            <a href="#">Leer más</a>
+            <a onClick={()=> console.log(dataAnime)}>Leer más</a>
 
-            <div className="clearfix"></div>
+            <div className="clearfix" ></div>
         </article>
     )
 }
