@@ -484,3 +484,79 @@ textarea {
   padding-bottom: 10px;
   font-family: 'Play', sans-serif;
 }
+
+.littleTitle {
+  color: var(--text-white);
+  font-size: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  font-family: 'Play', sans-serif;
+}
+
+.alignHorizontal {
+  display: flex;
+  align-items: center;
+}
+
+.avatarChat{
+  width: 48px;
+  height: 48px;
+}
+
+.inputForo {
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 20px;
+  display: grid;
+}
+
+.inputForo input{
+  border-radius: 5px;
+}
+
+.sendMessage {
+  cursor: pointer;
+  height: 35px;
+  margin-top: 30px;
+}
+
+.buttonsForo {
+  display: flex;
+  margin-left: 60px;
+}
+
+.inputHalf {
+  width: 50% !important;
+}
+
+.containerMessage {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.avatarMessages {
+  width: 35px;
+  height: 35px;
+}
+.containerMessage p {
+  color: #fff;
+}
+
+.containerMessage .message {
+  margin-left: 10px;
+}
+
+.containerMessage .message .name {
+  font-size: 16px;
+  font-weight: 700;
+}
+.containerMessage .message .name span{
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.containerMessage .message .body {
+  margin-top: -13px;
+  text-align: left;
+}

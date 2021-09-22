@@ -7,6 +7,7 @@ import { Estrenos } from './Components/Estrenos';
 import { PaginaNoEncontrada } from './Components/PaginaNoEncontrada';
 import { Pelicula } from './Components/Peliculas';
 import { Animes } from './Components/Animes/Animes';
+import { Peticiones } from './Components/Peticiones';
 
 export const Router = () => {
 
@@ -30,6 +31,7 @@ export const Router = () => {
                 <Route exact path="/Animes" component={Animes}></Route>
                 <Route exact path="/Estrenos" component={Estrenos}></Route>
                 <Route exact path="/Peliculas" component={Pelicula}></Route>
+                <Route exact path="/Peticiones" component={Peticiones}></Route>
                 <Route exact path="*" component={PaginaNoEncontrada}></Route>
                 
             </Switch>
