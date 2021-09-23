@@ -1,25 +1,18 @@
 import React from "react";
 import Avatar from "../../Assets/images/Avatar.png"
-
+import PosterSao from '../../Assets/images/Poster-Alicization.jpg'
+import { Message } from "./Item/Message";
+import { MessagePoster } from "./Item/MessagePoster";
+ 
 export const Foro = () => {
 
     return (
         <div className="containerForo">
-            <div className="containerMessage">
-                <img src={Avatar} alt="" className="avatarMessages" />
-                <div className="message">
-                    <p className="name">Douglas Hernandez <span>Hace 1 Hora</span></p>
-                    <p className="body">Prueba de mensaje </p>
-                </div>
-            </div>
-
-            <div className="containerMessage">
-                <img src={Avatar} alt="" className="avatarMessages" />
-                <div className="message">
-                    <p className="name">Douglas Hernandez <span>Hace 1 Hora</span></p>
-                    <p className="body">Mensaje 2 </p>
-                </div>
-            </div>
+            
+            <Message name="Douglas Hernandez" body="Mensaje de prueba" ></Message>
+            <MessagePoster name="Douglas Hernandez" body="Mensaje con poster"></MessagePoster>
+            <MessagePoster name="Douglas Hernandez" body="Mensaje con poster"></MessagePoster>
+            <Message name="Douglas Hernandez" body="Mensaje de prueba" ></Message>
         </div>
     )
 }

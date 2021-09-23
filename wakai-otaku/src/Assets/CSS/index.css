@@ -531,7 +531,6 @@ textarea {
 
 .containerMessage {
   display: flex;
-  margin-top: 10px;
   align-items: center;
 }
 
@@ -559,4 +558,46 @@ textarea {
 .containerMessage .message .body {
   margin-top: -13px;
   text-align: left;
+}
+
+.posterChat {
+  width: 180px;
+}
+
+.containerMessage .messagePoster {
+  margin-left: 10px;
+  text-align: left;
+}
+
+.containerMessage .messagePoster .name {
+  font-size: 16px;
+  font-weight: 700;
+}
+.containerMessage .messagePoster .name span{
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.containerMessage .messagePoster .body {
+  margin-top: -13px;
+  text-align: left;
+}
+
+.avatarPoster {
+  align-self: baseline;
+  margin-top: 20px;
+}
+
+.containerMessage .report {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.containerMessage .report img{
+  width: 25px;
+  filter: invert(1);
+}
+
+.containerMessage .report.poster{
+  align-self: baseline;
 }
