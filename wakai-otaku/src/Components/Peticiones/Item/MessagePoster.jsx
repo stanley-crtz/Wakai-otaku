@@ -3,7 +3,7 @@ import Avatar from "../../../Assets/images/Avatar.png"
 import PosterSao from '../../../Assets/images/Poster-Alicization.jpg'
 import IconReport from "../../../Assets/images/report.svg";
 
-export const MessagePoster = ({ name, body, poster }) => {
+export const MessagePoster = ({ name, body, img }) => {
 
     return (
         <div className="containerMessage">
@@ -11,7 +11,7 @@ export const MessagePoster = ({ name, body, poster }) => {
             <div className="messagePoster">
                 <p className="name">{name} <span>Hace 1 Hora</span></p>
                 <p className="body">{body} </p>
-                <img src={PosterSao} alt="Poster" className="posterChat" />
+                <img src={img} alt="Poster" className="posterChat" />
             </div>
 
             <div className="report poster">
