@@ -1,25 +1,114 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "../../Assets/images/Avatar.png"
-import uploadImg from "../../Assets/images/Upload.svg"
+import uploadIcon from "../../Assets/images/Upload.svg"
 import SendImg from "../../Assets/images/enviar.svg"
+import deleteImg from "../../Assets/images/boton-x.svg"
+import { collection, CollectionReference, getFirestore, doc, setDoc } from "@firebase/firestore";
+import { ref, uploadBytes, getDownloadURL  } from '@firebase/storage'
+import { useFirebaseApp, FirestoreProvider, useFirestoreCollection, useFirestore, useStorage, FirebaseAppProvider } from "reactfire";
+import Swal from 'sweetalert2';
+import { isReactNative } from "@firebase/util";
 
 
 export const FormMessage = () => {
+
+    
+    const [message, setMessage] = useState({ name: '', message: '', file: '' })
+    let referenceBD = useFirestore()
+    const refCollectionForo = collection(referenceBD, "Foro")
+    let referenceStorage = ref(useStorage(), `Foro/${message.file.name}`)
+    const sendMessage = async () => {
+        let urlImg = ''
+        if(message.file != ''){
+            urlImg = await uploadImg()
+        }
+
+        await setDoc(doc(refCollectionForo), {
+            name: message.name,
+            message: message.message,
+            img: urlImg,
+            type: message.file == '' ? "1" : "2"
+        });
+
+        setMessage({name: '', message: '', file: ''})
+        console.log('Mensaje Guardado')
+    }
+
+    const onchange = ({ currentTarget: { value, name } }) => {
+        setMessage({ ...message, [name]: value })
+    }
+
+    const selectImage = async () => {
+        const { value: file } = await Swal.fire({
+            title: 'Selecciona el poster del Anime',
+            input: 'file',
+            inputAttributes: {
+                'accept': 'image/*',
+                'aria-label': 'Upload your profile picture'
+            }
+        })
+
+        if (file) {
+            console.log(file)
+            const reader = new FileReader()
+            reader.onload = (e) => {
+                Swal.fire({
+                    title: 'Vista previa de la foto',
+                    imageUrl: e.target.result,
+                    imageAlt: 'The uploaded picture',
+                    imageHeight: 300,
+                    imageWidth: 300,
+                    confirmButtonText: 'Confirmar',
+                    text: 'Desea subir esta imagen?'
+
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        setMessage({ ...message, file: file })
+                    }
+                })
+            }
+            reader.readAsDataURL(file)
+        }
+    }
+
+    const uploadImg = async() => {
+        await uploadBytes(referenceStorage, message.file)
+        let url = await getDownloadURL(referenceStorage)
+        
+        return url
+    }
 
     return (
         <>
             <div className='alignHorizontal'>
                 <img src={Avatar} alt="Avatar" className="avatarChat" />
                 <div className="inputForo">
-                    <input type="text" placeholder="Ingresa un nombre de usuario" className="inputHalf" />
-                    <input type="text" placeholder="Agrega tu peticion" />
+                    <input type="text" 
+                        placeholder="Ingresa un nombre de usuario" 
+                        className="inputHalf" 
+                        name="name" 
+                        value={message.name}
+                        onChange={onchange} />
+                    <input type="text" 
+                        placeholder="Agrega tu peticion" 
+                        name="message"
+                        value={message.message}
+                        onChange={onchange} />
                 </div>
-                <img src={SendImg} alt="Avatar" className="avatarChat sendMessage" />
+                <img src={SendImg} alt="Avatar" className="avatarChat sendMessage" onClick={sendMessage} />
             </div>
             <div className="buttonsForo" >
-                <button className="avatarChat">
-                    <img src={uploadImg} alt="Avatar" />
+                <button className="avatarChat" onClick={selectImage}>
+                    <img src={uploadIcon} alt="Avatar" />
                 </button>
+                {message.file != '' &&
+                    <>
+                        <p className="file" >{message.file.name}</p>
+                        <button className="btnDeleteFile">
+                            <img src={deleteImg} alt="Avatar" />
+                        </button>
+                    </>
+                }
             </div>
         </>
     )

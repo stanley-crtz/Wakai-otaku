@@ -549,6 +549,7 @@ textarea {
 .containerMessage .message .name {
   font-size: 16px;
   font-weight: 700;
+  text-align: left;
 }
 .containerMessage .message .name span{
   font-size: 13px;
@@ -600,4 +601,18 @@ textarea {
 
 .containerMessage .report.poster{
   align-self: baseline;
+}
+
+.buttonsForo .file {
+  color: #fff;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.buttonsForo .btnDeleteFile {
+  background: none;
+  border: none;
+  width: 35px;
+  margin-top: 8px;
+  cursor: pointer;
 }
