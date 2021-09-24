@@ -20,6 +20,10 @@ export const FormMessage = () => {
     const sendMessage = async () => {
         let urlImg = ''
         if(message.file != ''){
+            Toast.fire({
+                icon: "info",
+                title: "Espere un momento"
+            })
             urlImg = await uploadImg()
         }
 
@@ -29,7 +33,10 @@ export const FormMessage = () => {
             img: urlImg,
             type: message.file == '' ? "1" : "2"
         });
-
+        Toast.fire({
+            icon: "success",
+            title: "Mensaje enviado con exito"
+        })
         setMessage({name: '', message: '', file: ''})
         console.log('Mensaje Guardado')
     }
@@ -77,6 +84,18 @@ export const FormMessage = () => {
         
         return url
     }
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
 
     return (
         <>
