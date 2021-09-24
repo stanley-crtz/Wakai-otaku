@@ -3,11 +3,10 @@ import Avatar from "../../Assets/images/Avatar.png"
 import uploadIcon from "../../Assets/images/Upload.svg"
 import SendImg from "../../Assets/images/enviar.svg"
 import deleteImg from "../../Assets/images/boton-x.svg"
-import { collection, CollectionReference, getFirestore, doc, setDoc } from "@firebase/firestore";
+import { collection, doc, setDoc } from "@firebase/firestore";
 import { ref, uploadBytes, getDownloadURL  } from '@firebase/storage'
-import { useFirebaseApp, FirestoreProvider, useFirestoreCollection, useFirestore, useStorage, FirebaseAppProvider } from "reactfire";
+import { useFirestore, useStorage } from "reactfire";
 import Swal from 'sweetalert2';
-import { isReactNative } from "@firebase/util";
 
 
 export const FormMessage = () => {
