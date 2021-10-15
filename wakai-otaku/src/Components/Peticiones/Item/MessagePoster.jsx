@@ -20,7 +20,7 @@ export const MessagePoster = ({ name, body, img, deleteDoc, id }) => {
         })
         console.log(result)
         if(result.status === 200){
-            const { partial, raw, safe } = result.data.nudity
+            const { partial, raw } = result.data.nudity
             const { weapon, drugs } = result.data
 
             if(raw > 0.2 || partial > 0.3 ){

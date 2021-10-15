@@ -1,8 +1,8 @@
 import React from 'react';
-import Poster from '../../../Assets/images/Poster-tokyoGhoul.jpg'
+import {Link} from 'react-router-dom';
 
 export const Miniaturas = ({dataAnime}) => {
-    
+
     return (
 
         <article className="article-item" >
@@ -14,7 +14,7 @@ export const Miniaturas = ({dataAnime}) => {
             <span className="date">
                 {dataAnime.attributes.episodeCount} - Episodios
             </span>
-            <a onClick={()=> console.log(dataAnime)}>Leer más</a>
+            <Link to={`/Anime/${dataAnime.id}`}>Leer más</Link>
 
             <div className="clearfix" ></div>
         </article>

@@ -123,7 +123,7 @@ body {
   color: var(--text-color-secundary);
 }
 
-.activeLink{
+#menu .activeLink{
   color: var(--text-color-secundary);
 }
 
@@ -614,5 +614,124 @@ textarea {
   border: none;
   width: 35px;
   margin-top: 8px;
+  cursor: pointer;
+}
+
+.foro-container {
+  display: flex;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.information {
+  flex: 1;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-white)
+}
+
+.information > .description {
+  display: flex;
+}
+
+ .information > .description > .details {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.synopsis {
+  text-align: left;
+}
+
+.synopsis > h2 {
+  width: 100%;
+  background: var(--secondary-color);
+  padding: 5px;
+  text-align: center;
+}
+
+.anime-foro {
+  flex: 2;
+  display: flex;
+  margin-left: 20px;
+  color: #fff;
+  background: #252525;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.anime-foro > h1 {
+  width: 90%;
+  border-bottom: 1px solid #fff;
+}
+
+.comments {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 90%;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.foro-item {
+  display: flex;
+  align-items: flex-start;
+  height: max-content;
+  margin-top: 10px;
+}
+
+.circle {
+  background: rgba(255,255,255,0.3);
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+}
+
+.foro-item > .description {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.foro-item > .description > h3 {
+  margin: 0px;
+  margin-bottom: 8px;
+}
+
+.input-container {
+  width: 90%;
+  background: rgba(255,255,255, 0.3);
+  margin-top: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.input-container > input[type="text"] {
+  outline: none !important;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.input-container > input[type="text"]::placeholder {
+  color: #faf3fa
+}
+
+.input-container > img {
+  width: 20px;
+}
+
+.input-container > img:hover {
   cursor: pointer;
 }

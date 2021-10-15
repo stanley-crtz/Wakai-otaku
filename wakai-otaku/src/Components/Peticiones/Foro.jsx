@@ -18,7 +18,7 @@ export const Foro = () => {
 
     useEffect(() => {
         deleteDoc(refDocMessage)
-    }, [idDoc])
+    }, [idDoc, refDocMessage])
 
    
     return (
@@ -27,7 +27,7 @@ export const Foro = () => {
             {status === 'success' &&
                 data.docs.map((item, i) => {
                     let data = item.data()
-                    if (data.type == '1') {
+                    if (data.type === '1') {
                         return (<Message name={data.name} body={data.message} id={item.id} key={item.id} ></Message>)
                     } else {
                         return (<MessagePoster

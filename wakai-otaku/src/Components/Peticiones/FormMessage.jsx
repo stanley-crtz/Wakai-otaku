@@ -18,7 +18,7 @@ export const FormMessage = () => {
     let referenceStorage = ref(useStorage(), `Foro/${message.file.name}`)
     const sendMessage = async () => {
         let urlImg = ''
-        if(message.file != ''){
+        if(message.file !== ''){
             Toast.fire({
                 icon: "info",
                 title: "Espere un momento"
@@ -30,7 +30,7 @@ export const FormMessage = () => {
             name: message.name,
             message: message.message,
             img: urlImg,
-            type: message.file == '' ? "1" : "2"
+            type: !message.file ? "1" : "2"
         });
         Toast.fire({
             icon: "success",
@@ -119,7 +119,7 @@ export const FormMessage = () => {
                 <button className="avatarChat" onClick={selectImage}>
                     <img src={uploadIcon} alt="Avatar" />
                 </button>
-                {message.file != '' &&
+                {!message.file &&
                     <>
                         <p className="file" >{message.file.name}</p>
                         <button className="btnDeleteFile">
