@@ -3,11 +3,14 @@ import Axios from 'axios';
 import {useParams} from "react-router-dom";
 import {Information} from "./Information";
 import {Foro} from "./Foro";
+import {FirestoreProvider, useFirebaseApp} from "reactfire";
+import {getFirestore} from "firebase/firestore";
 
 const AnimeForo = () => {
 
     const params = useParams()
     const [anime, setAnime] = useState(null)
+    const firestoreInstance = getFirestore(useFirebaseApp());
 
     useEffect(() => {
         Axios.get(`https://kitsu.io/api/edge/anime/${params.id}`)
@@ -22,7 +25,9 @@ const AnimeForo = () => {
                 anime && (
                     <>
                         <Information {...anime} />
-                        <Foro />
+                         <FirestoreProvider sdk={firestoreInstance}>
+                            <Foro />
+                         </FirestoreProvider>
                     </>
                 )
             }

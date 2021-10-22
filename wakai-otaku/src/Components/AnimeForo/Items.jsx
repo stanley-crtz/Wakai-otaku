@@ -1,11 +1,12 @@
-export const Items = () => {
+export const Items = ({ user, msg, img='' }) => {
 
     return (
         <div className="foro-item">
             <div className="circle" />
             <div className="description">
-                <h3>Stanley Cortez</h3>
-                <label>Hola mundo</label>
+                <h3>{user}</h3>
+                <label>{msg}</label>
+                <img src={img} alt={user} />
             </div>
         </div>
     )
