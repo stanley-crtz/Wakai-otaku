@@ -6,7 +6,6 @@ export const Items = ({ user, msg, img='' }) => {
             <div className="description">
                 <h3>{user}</h3>
                 <label>{msg}</label>
-                <img src={img} alt={user} />
             </div>
         </div>
     )
